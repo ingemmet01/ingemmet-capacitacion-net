@@ -131,6 +131,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ingemmet.FirmaDocumento.Infrastructure\Ingemmet.FirmaDocumento.Infrastructure.csproj">
+      <Project>{25ea6c3e-bfe2-4656-a6a8-c903617d6e12}</Project>
+      <Name>Ingemmet.FirmaDocumento.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
