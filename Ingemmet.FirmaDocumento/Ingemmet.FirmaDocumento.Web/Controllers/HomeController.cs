@@ -1,4 +1,5 @@
-﻿using Ingemmet.FirmaDocumento.Infrastructure.Enums;
+﻿using Ingemmet.CommonService.WebService.Services.Security.Model;
+using Ingemmet.FirmaDocumento.Infrastructure.Enums;
 using Ingemmet.FirmaDocumento.Infrastructure.Extensions;
 using Ingemmet.FirmaDocumento.Infrastructure.Helpers;
 using System.Web.Mvc;
@@ -9,6 +10,9 @@ namespace Ingemmet.FirmaDocumento.Web.Controllers
     {
         public ActionResult Index()
         {
+            ActiveDirectoryWebServiceClient client = new ActiveDirectoryWebServiceClient();
+            UserActiveDirectoryResponse response = client.FindByUsername("proyectososi02");
+
             return View();
         }
 
