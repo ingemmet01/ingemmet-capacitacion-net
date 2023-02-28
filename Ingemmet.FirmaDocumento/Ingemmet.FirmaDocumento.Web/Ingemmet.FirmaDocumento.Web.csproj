@@ -54,8 +54,18 @@
       <HintPath>..\lib\DevExtreme\DevExtreme.AspNet.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -121,48 +131,48 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Charset.css" />
-    <Content Include="Content\dx-diagram.css" />
-    <Content Include="Content\dx-diagram.min.css" />
-    <Content Include="Content\dx-gantt.css" />
-    <Content Include="Content\dx-gantt.min.css" />
-    <Content Include="Content\dx.carmine.compact.css" />
-    <Content Include="Content\dx.carmine.css" />
-    <Content Include="Content\dx.common.css" />
-    <Content Include="Content\dx.contrast.compact.css" />
-    <Content Include="Content\dx.contrast.css" />
-    <Content Include="Content\dx.dark.compact.css" />
-    <Content Include="Content\dx.dark.css" />
-    <Content Include="Content\dx.darkmoon.compact.css" />
-    <Content Include="Content\dx.darkmoon.css" />
-    <Content Include="Content\dx.darkviolet.compact.css" />
-    <Content Include="Content\dx.darkviolet.css" />
-    <Content Include="Content\dx.greenmist.compact.css" />
-    <Content Include="Content\dx.greenmist.css" />
-    <Content Include="Content\dx.light.compact.css" />
-    <Content Include="Content\dx.light.css" />
-    <Content Include="Content\dx.material.blue.dark.compact.css" />
-    <Content Include="Content\dx.material.blue.dark.css" />
-    <Content Include="Content\dx.material.blue.light.compact.css" />
-    <Content Include="Content\dx.material.blue.light.css" />
-    <Content Include="Content\dx.material.lime.dark.compact.css" />
-    <Content Include="Content\dx.material.lime.dark.css" />
-    <Content Include="Content\dx.material.lime.light.compact.css" />
-    <Content Include="Content\dx.material.lime.light.css" />
-    <Content Include="Content\dx.material.orange.dark.compact.css" />
-    <Content Include="Content\dx.material.orange.dark.css" />
-    <Content Include="Content\dx.material.orange.light.compact.css" />
-    <Content Include="Content\dx.material.orange.light.css" />
-    <Content Include="Content\dx.material.purple.dark.compact.css" />
-    <Content Include="Content\dx.material.purple.dark.css" />
-    <Content Include="Content\dx.material.purple.light.compact.css" />
-    <Content Include="Content\dx.material.purple.light.css" />
-    <Content Include="Content\dx.material.teal.dark.compact.css" />
-    <Content Include="Content\dx.material.teal.dark.css" />
-    <Content Include="Content\dx.material.teal.light.compact.css" />
-    <Content Include="Content\dx.material.teal.light.css" />
-    <Content Include="Content\dx.softblue.compact.css" />
-    <Content Include="Content\dx.softblue.css" />
+    <Content Include="Content\Devexpress\Charset.css" />
+    <Content Include="Content\Devexpress\dx-diagram.css" />
+    <Content Include="Content\Devexpress\dx-diagram.min.css" />
+    <Content Include="Content\Devexpress\dx-gantt.css" />
+    <Content Include="Content\Devexpress\dx-gantt.min.css" />
+    <Content Include="Content\Devexpress\dx.carmine.compact.css" />
+    <Content Include="Content\Devexpress\dx.carmine.css" />
+    <Content Include="Content\Devexpress\dx.common.css" />
+    <Content Include="Content\Devexpress\dx.contrast.compact.css" />
+    <Content Include="Content\Devexpress\dx.contrast.css" />
+    <Content Include="Content\Devexpress\dx.dark.compact.css" />
+    <Content Include="Content\Devexpress\dx.dark.css" />
+    <Content Include="Content\Devexpress\dx.darkmoon.compact.css" />
+    <Content Include="Content\Devexpress\dx.darkmoon.css" />
+    <Content Include="Content\Devexpress\dx.darkviolet.compact.css" />
+    <Content Include="Content\Devexpress\dx.darkviolet.css" />
+    <Content Include="Content\Devexpress\dx.greenmist.compact.css" />
+    <Content Include="Content\Devexpress\dx.greenmist.css" />
+    <Content Include="Content\Devexpress\dx.light.compact.css" />
+    <Content Include="Content\Devexpress\dx.light.css" />
+    <Content Include="Content\Devexpress\dx.material.blue.dark.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.blue.dark.css" />
+    <Content Include="Content\Devexpress\dx.material.blue.light.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.blue.light.css" />
+    <Content Include="Content\Devexpress\dx.material.lime.dark.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.lime.dark.css" />
+    <Content Include="Content\Devexpress\dx.material.lime.light.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.lime.light.css" />
+    <Content Include="Content\Devexpress\dx.material.orange.dark.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.orange.dark.css" />
+    <Content Include="Content\Devexpress\dx.material.orange.light.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.orange.light.css" />
+    <Content Include="Content\Devexpress\dx.material.purple.dark.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.purple.dark.css" />
+    <Content Include="Content\Devexpress\dx.material.purple.light.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.purple.light.css" />
+    <Content Include="Content\Devexpress\dx.material.teal.dark.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.teal.dark.css" />
+    <Content Include="Content\Devexpress\dx.material.teal.light.compact.css" />
+    <Content Include="Content\Devexpress\dx.material.teal.light.css" />
+    <Content Include="Content\Devexpress\dx.softblue.compact.css" />
+    <Content Include="Content\Devexpress\dx.softblue.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\aspnet\dx.aspnet.data.js" />
@@ -245,41 +255,47 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\DevExtremeBundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DevexpressBundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Authorization\AppAuthenticationType.cs" />
+    <Compile Include="Infrastructure\Authorization\AuntheticationService.cs" />
     <Compile Include="Models\Proxies\ActiveDirectoryWebService.cs" />
+    <Compile Include="Models\Proxies\EmailWcfService.cs" />
     <Compile Include="Models\Proxies\VerificationCodeWcfService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Content\fonts\Roboto-300.ttf" />
-    <Content Include="Content\fonts\Roboto-300.woff" />
-    <Content Include="Content\fonts\Roboto-300.woff2" />
-    <Content Include="Content\fonts\Roboto-400.ttf" />
-    <Content Include="Content\fonts\Roboto-400.woff" />
-    <Content Include="Content\fonts\Roboto-400.woff2" />
-    <Content Include="Content\fonts\Roboto-500.ttf" />
-    <Content Include="Content\fonts\Roboto-500.woff" />
-    <Content Include="Content\fonts\Roboto-500.woff2" />
-    <Content Include="Content\fonts\Roboto-700.ttf" />
-    <Content Include="Content\fonts\Roboto-700.woff" />
-    <Content Include="Content\fonts\Roboto-700.woff2" />
-    <Content Include="Content\icons\dxicons.ttf" />
-    <Content Include="Content\icons\dxicons.woff" />
-    <Content Include="Content\icons\dxicons.woff2" />
-    <Content Include="Content\icons\dxiconsmaterial.ttf" />
-    <Content Include="Content\icons\dxiconsmaterial.woff" />
-    <Content Include="Content\icons\dxiconsmaterial.woff2" />
+    <Content Include="Content\Devexpress\fonts\Roboto-300.ttf" />
+    <Content Include="Content\Devexpress\fonts\Roboto-300.woff" />
+    <Content Include="Content\Devexpress\fonts\Roboto-300.woff2" />
+    <Content Include="Content\Devexpress\fonts\Roboto-400.ttf" />
+    <Content Include="Content\Devexpress\fonts\Roboto-400.woff" />
+    <Content Include="Content\Devexpress\fonts\Roboto-400.woff2" />
+    <Content Include="Content\Devexpress\fonts\Roboto-500.ttf" />
+    <Content Include="Content\Devexpress\fonts\Roboto-500.woff" />
+    <Content Include="Content\Devexpress\fonts\Roboto-500.woff2" />
+    <Content Include="Content\Devexpress\fonts\Roboto-700.ttf" />
+    <Content Include="Content\Devexpress\fonts\Roboto-700.woff" />
+    <Content Include="Content\Devexpress\fonts\Roboto-700.woff2" />
+    <Content Include="Content\Devexpress\icons\dxicons.ttf" />
+    <Content Include="Content\Devexpress\icons\dxicons.woff" />
+    <Content Include="Content\Devexpress\icons\dxicons.woff2" />
+    <Content Include="Content\Devexpress\icons\dxiconsmaterial.ttf" />
+    <Content Include="Content\Devexpress\icons\dxiconsmaterial.woff" />
+    <Content Include="Content\Devexpress\icons\dxiconsmaterial.woff2" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Authorization\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -291,6 +307,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ingemmet.FirmaDocumento.Entity\Ingemmet.FirmaDocumento.Entity.csproj">
+      <Project>{d94b868b-97db-4d44-9a9a-b0e867300414}</Project>
+      <Name>Ingemmet.FirmaDocumento.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ingemmet.FirmaDocumento.Infrastructure\Ingemmet.FirmaDocumento.Infrastructure.csproj">
       <Project>{25ea6c3e-bfe2-4656-a6a8-c903617d6e12}</Project>
       <Name>Ingemmet.FirmaDocumento.Infrastructure</Name>

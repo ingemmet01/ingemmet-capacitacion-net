@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Optimization;
 
-namespace Ingemmet.FirmaDocumento.Web {
+namespace Ingemmet.FirmaDocumento.Web
+{
 
-    public class DevExtremeBundleConfig {
+    public class DevexpressBundleConfig {
 
         public static void RegisterBundles(BundleCollection bundles) {
 
@@ -13,7 +11,7 @@ namespace Ingemmet.FirmaDocumento.Web {
             var scriptBundle = new ScriptBundle("~/Scripts/DevExtremeBundle");
 
             // Adding the UTF-8 charset to display icons correctly
-            styleBundle.Include("~/Content/Charset.css");
+            styleBundle.Include("~/Content/Devexpress/Charset.css");
 
             // Uncomment to use the Gantt control
             //styleBundle.Include("~/Content/dx-gantt.css");
@@ -21,10 +19,10 @@ namespace Ingemmet.FirmaDocumento.Web {
             // Uncomment to use the Diagram control
             //styleBundle.Include("~/Content/dx-diagram.css");
 
-            styleBundle.Include("~/Content/dx.common.css");
+            styleBundle.Include("~/Content/Devexpress/dx.common.css");
 
             // Predefined themes: https://js.devexpress.com/DevExtreme/Guide/Themes_and_Styles/Predefined_Themes/
-            styleBundle.Include("~/Content/dx.light.css");
+            styleBundle.Include("~/Content/Devexpress/dx.light.css");
 
             // Uncomment to use the Gantt control
             //scriptBundle.Include("~/Scripts/dx-gantt.js");

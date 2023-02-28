@@ -10,8 +10,9 @@ namespace Ingemmet.FirmaDocumento.Web.Controllers
     {
         public ActionResult Index()
         {
-            ActiveDirectoryWebServiceClient client = new ActiveDirectoryWebServiceClient();
-            UserActiveDirectoryResponse response = client.FindByUsername("proyectososi02");
+            //ActiveDirectoryWebServiceClient client = new ActiveDirectoryWebServiceClient();
+            //UserActiveDirectoryResponse response = client.FindByUsername("proyectososi02");
+            //client.Close();
 
             return View();
         }
