@@ -49,9 +49,17 @@ namespace Ingemmet.FirmaDocumento.Web.Infrastructure.Authorization
             return new AuthenticationResultModel();
         }
 
-        private ClaimsIdentity CreateIdentity(CommonService.Entity.Models.UserModel data)
+        private ClaimsIdentity CreateIdentity(CommonService.Entity.Models.UserModel user)
         {
-            throw new System.NotImplementedException();
+            ClaimsIdentity identity = new ClaimsIdentity(AppAuthenticationType.ApplicationCookie, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            identity.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "Active Directory"));
+            identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
+            identity.AddClaim(new Claim(ClaimTypes.WindowsAccountName, user.SamAccountName));
+            identity.AddClaim(new Claim(ClaimTypes.Name, user.Name));
+            identity.AddClaim(new Claim(ClaimTypes.Email, user.EmailAddress));
+            identity.AddClaim(new Claim("Office", user.Department));
+
+            return identity;
         }
     }
 }

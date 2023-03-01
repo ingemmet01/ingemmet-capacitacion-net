@@ -1,8 +1,64 @@
 ﻿
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Inicio de sesión";
     Layout = null;
 }
 
-<h2>Login</h2>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>.:: INGEMMET | @ViewBag.Title ::.</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <form id="frmLogin" class="row" action="@Url.Action("Login","Authorization")">
+            @Html.AntiForgeryToken()
+            <div class="offset-md-3 col-6 my-5">
+                <div class="card">
+                    <div class="card-header">
+                        Iniciar sesión
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Usuario:</label>
+                            <input type="text" class="form-control" name="Username" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña:</label>
+                            <input type="password" class="form-control" name="Password" required />
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" name="remember" /> Recuérdame</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-primary"> Iniciar sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/app/helper.js")
+
+<script type="text/javascript">
+    $(function () {
+        $('#frmLogin').validate({
+            submitHandler: function (form) {
+                $.post(form.action, $(form).serializeObject(), function (data) {
+                }).fail(function (error) {
+                    alert('error');
+                })
+                return;
+            }
+        });
+    });
+</script>
+</html>
 

@@ -4,13 +4,18 @@ using System.Web.Mvc;
 
 namespace Ingemmet.FirmaDocumento.Web.Controllers
 {
+    [RoutePrefix("authorization")]
+    [Route("{action}")]
     public class AuthorizationController : Controller
     {
+
+        [Route("signin")]
         public ActionResult Login(string returnUrl)
         {
             return View();
         }
 
+        [Route("signin")]
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -20,6 +25,7 @@ namespace Ingemmet.FirmaDocumento.Web.Controllers
         }
 
         [Authorize]
+        [Route("logoff")]
         public ActionResult SignOut(string returnUrl)
         {
             return View();
