@@ -28,6 +28,6 @@
         $(element).closest('.form-group').removeClass('has-error');
     },
     success: function (label, element) {
-        $(element).removeClass('is-invalid').addClass('has-error');
+        $(element).removeClass('is-invalid').addClass('is-valid');
     }
 });

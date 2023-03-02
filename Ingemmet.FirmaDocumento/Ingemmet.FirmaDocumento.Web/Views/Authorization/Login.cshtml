@@ -51,11 +51,21 @@
     $(function () {
         $('#frmLogin').validate({
             submitHandler: function (form) {
-                $.post(form.action, $(form).serializeObject(), function (data) {
-                }).fail(function (error) {
-                    alert('error');
-                })
-                return;
+                $.post(form.action, $(form).serializeObject(),
+                    function (data) {
+                        if (data.isSuccess) {
+                            alert(data.message);
+
+                            setTimeout(function () {
+                                window.location = data.result;
+                            }, 1000);
+                        } else {
+                            alert(data.message);
+                        }
+                    }).fail(function (error) {
+                        console.log(error);
+                    });
+                return false;
             }
         });
     });

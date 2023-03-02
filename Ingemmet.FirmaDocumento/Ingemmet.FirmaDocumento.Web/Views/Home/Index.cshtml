@@ -1,7 +1,8 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Dashboard";
 }
 
-<h2>Hola Mundo</h2>
+<h5>Hola, @UserClaimsIdentity.GetUserName (@UserClaimsIdentity.GetUserOffice)</h5>
+<h6>Correo: @UserClaimsIdentity.GetUserEmail</h6>
 
+<a href="@Url.Action("SignOut", "Authorization", new { area = "", returnUrl = ""})">Cerrar Sessión</a>
